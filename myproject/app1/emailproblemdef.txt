@@ -1,0 +1,35 @@
+Email Service
+
+Create a service that accepts the necessary information and sends emails. It should provide an abstraction between two different email service providers. If one of the services goes down, your service can quickly failover to a different provider without affecting your customers.
+
+Example Email Providers:
+
+    SendGrid - Simple Send Documentation
+    Mailgun - Simple Send Documentation
+    Mandrill - Simple Send Documentation
+    Amazon SES - Simple Send Documentation
+
+All listed services are free to try and are pretty painless to sign up for, so please register your own test accounts on each.
+
+
+def send_simple_message():
+    return requests.post(
+        "https://api.mailgun.net/v3/samples.mailgun.org/messages",
+        auth=("api", "key-3ax6xnjp29jd6fds4gc373sgvjxteol0"),
+        data={"from": "Excited User <excited@samples.mailgun.org>",
+              "to": ["devs@mailgun.net"],
+              "subject": "Hello",
+              "text": "Testing some Mailgun awesomeness!"})
+
+
+
+
+def send_simple_message():
+    return requests.post(
+        "https://api.mailgun.net/v3/sandboxe81393df42d048d391a78f95cc198be3.mailgun.org/messages",
+        auth=("api", "key-fa2723c0e2940ad1102060a1a7a27062"),
+        data={"from": "Mailgun Sandbox <postmaster@sandboxe81393df42d048d391a78f95cc198be3.mailgun.org>",
+              "to": "ParisKamal <pariskamal8@gmail.com>",
+              "subject": "Hello ParisKamal",
+              "text": "Congratulations ParisKamal, you just sent an email with Mailgun!  You are truly awesome!  You can see a record of this email in your logs: https://mailgun.com/cp/log .  You can send up to 300 emails/day from this sandbox server.  Next, you should add your own domain so you can send 10,000 emails/month for free."})
+    

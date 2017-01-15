@@ -1,0 +1,21 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
+
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker({ "setDate": new Date(),
+        "autoclose": true,dateFormat: 'yy-mm-dd',changeMonth: true });
+  });
+  </script>
+</head>
+<form action="/app1/login/bussearch" method="post" content-type="application/json">
+	{% csrf_token %}
+	From:<input type='text' name='from' length=20 required/><br>
+	To:<input type='text' name='to' required/><br>
+	departure_date:<input type='text' id ="datepicker" name='Dd' required/><br>
+	<input type="submit" value="search" class="btn btn-primary"><br>
+</form>
+</html>
